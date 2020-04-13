@@ -1,0 +1,35 @@
+<div class="container card-wrapper">
+	<h1>{{$ctrl.heading}}</h1>
+	<hr>
+	<div class="card-container">
+		<div class="row">
+			<div class="col-8">
+				<article>
+					<h3>Loans that help</h3>
+					<p>A small loan is a great solution if you need to renovate your home, buy new furniture for the terrace, repair your car or to finance your next big thing.</p>
+					<ul>
+						<li>Borrow from 500 up to 20 000 € without collateral.</li>
+						<li>Money is transferred to the account immediately after the conclusion of the contract.</li>
+						<li>It is possible to make early repayments without any additional fees.</li>
+					</ul>
+					<p><i class="fa fa-lg fa-clock-o"></i> It takes only 1-2 minutes to fill loan application.</p>
+					<p>
+						Please note, that by using financial services you assume financial obligations. Improper execution of financial obligations may adversely affect your
+						credit history and raise the cost of borrowing, and it can also cause initiation of enforced recovery.
+					</p>
+				</article>
+			</div>
+			<div class="col-4">
+				<picture class="crop">
+					<img src="/assets/small_loan.jpg" class="img-thumbnail float-right" alt="loan image">
+				</picture>
+			</div>
+		</div>
+
+	</div>
+
+	<hr>
+	<div class="d-flex justify-content-end">
+		<button type="button" name="button" class="btn btn-warning" ng-click="$ctrl.goToNextStep()">Fill the form</button>
+	</div>
+</div>

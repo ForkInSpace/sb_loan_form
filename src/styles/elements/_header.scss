@@ -1,0 +1,15 @@
+.navbar {
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: -ms-linear-gradient(left, #fb661d 0%, #f4ba44 100%);
+    background: linear-gradient(to right, #fb661d 0%, #f4ba44 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb661d', endColorstr='#f4ba44',GradientType=1 );
+    top: 0;
+    height: 10px;
+  }
+}

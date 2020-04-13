@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$font-family-sans-serif: "Open Sans", "Calibri", Helvetica, Arial, sans-serif;
+$application-font-size: 15px;
+$application-background: #FBF2EA;
+$primary-color: #F35B1C;
+
+h1 {
+  font-size: 32px;
+  line-height: 32px;
+  color: $primary-color;
+  font-weight: 600;
+}

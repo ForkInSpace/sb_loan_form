@@ -1,0 +1,58 @@
+body {
+	padding-top: $application-body-padding-top; // for fixing navbar-fix-top issue
+	font-size: $application-font-size; // global font-size
+	background: $application-background; // global background-color
+	color: $application-secondary-color;
+
+	p>i,
+	h1 {
+		color: $application-primary-color;
+	}
+}
+
+.crop {
+	height: 100%;
+	width: auto;
+	position: absolute;
+	overflow: hidden;
+
+	img {
+		height: auto;
+		width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+		&.img-thumbnail {
+			padding: 0;
+		}
+	}
+}
+
+
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.space-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+.slider-form{
+	.slider-form__heading {
+		padding-top: 24px;
+	}
+}
+
+.form-control {
+	width: auto !important;
+}
+
+.bg-accent {
+	background-color: $application-accent-color;
+}

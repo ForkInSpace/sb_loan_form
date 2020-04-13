@@ -1,0 +1,50 @@
+.custom-slider.rzslider .rz-bar {
+  background: #ffe4d1;
+  height: 2px;
+}
+.custom-slider.rzslider .rz-selection {
+  background: orange;
+}
+
+.custom-slider.rzslider .rz-pointer {
+	top: -10px;
+	width:24px;
+	height:24px;
+	border-radius: 50%;
+  background-color: $primary-color;
+}
+
+.custom-slider.rzslider .rz-pointer:after {
+  display: none;
+}
+
+.custom-slider.rzslider .rz-bubble {
+  bottom: 14px;
+	bottom: -30px;
+
+	&.rz-model-value {
+		background-color: antiquewhite;
+		padding: 2px 4px;
+		border-radius: 8px;
+		bottom: 20px;
+		color: $primary-color;
+	}
+}
+
+.custom-slider.rzslider .rz-limit {
+  font-weight: bold;
+  color: orange;
+}
+
+.custom-slider.rzslider .rz-tick {
+  width: 1px;
+  height: 10px;
+  margin-left: 4px;
+  border-radius: 0;
+  background: #ffe4d1;
+  top: -1px;
+}
+
+.custom-slider.rzslider .rz-tick.rz-selected {
+  background: orange;
+}
