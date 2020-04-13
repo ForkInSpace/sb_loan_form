@@ -6,16 +6,41 @@
 			<div class="col-12">
 				<div class="slider-form">
 					<dl class="row">
+						<!-- TODO add form validation -->
 						<div class="col-4">
-
+							<dt class="text-right">Co-borrower's name*</dt>
 						</div>
 						<div class="col-8">
 							<dd>
-								<div class="">
-									<a class="nav-link" href="#fat"><i class="fa fa-plus-circle"></i>Add Co-applicant</a>
+								<div class="form-group">
+									<input required name="name" type="text" class="form-control" ng-model="$ctrl.info.name" ng-blur="$ctrl.storeTheValue()" aria-label="Co-borrower's name">
+									<p style="color:red" ng-show="coBorrowerForm.name.$invalid" class="help-block">This field is required.</p>
 								</div>
 							</dd>
 						</div>
+						<div class="col-4">
+							<dt class="text-right">Income after tax*</dt>
+						</div>
+						<div class="col-8">
+							<dd>
+								<div class="form-group">
+									<input required name="name" type="text" class="form-control" ng-model="$ctrl.info.income" ng-blur="$ctrl.storeTheValue()" aria-label="Co-borrower's name">
+									<p style="color:red" ng-show="coBorrowerForm.income.$invalid" class="help-block">This field is required.</p>
+								</div>
+							</dd>
+						</div>
+						<div class="col-4">
+							<dt class="text-right">Financial monthly liabilities (if any)*</dt>
+						</div>
+						<div class="col-8">
+							<dd>
+								<div class="form-group">
+									<input required name="name" type="text" class="form-control" ng-model="$ctrl.info.debt" ng-blur="$ctrl.storeTheValue()" aria-label="Co-borrower's name">
+									<p style="color:red" ng-show="coBorrowerForm.debt.$invalid" class="help-block">This field is required.</p>
+								</div>
+							</dd>
+						</div>
+
 					</dl>
 				</div>
 			</div>
