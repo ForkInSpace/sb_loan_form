@@ -8,6 +8,7 @@ export default class FormService {
     this.$q = $q;
 	}
   static form = {};
+	static personalData = {};
 
 	getData = () => {
     let defer = this.$q.defer();
@@ -17,11 +18,26 @@ export default class FormService {
 
   saveData = (res) => {
 		let defer = this.$q.defer();
+		console.log(this.form);
 		this.form = res;
+		if(this.personalData){
+			this.form.personalData = this.personalData;
+		}
 		defer.resolve(this.form);
 		// console.log(this.form);
 		return defer.promise;
   }
+
+	savePersonalData = (res) => {
+		let defer = this.$q.defer();
+		this.personalData = res;
+		if(this.form){
+			this.form.personalData = this.personalData;
+		}
+		defer.resolve(this.form);
+		console.log(this.form);
+		return defer.promise;
+	}
 
 
 }
