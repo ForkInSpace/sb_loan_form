@@ -10,6 +10,13 @@ body {
 	}
 }
 
+h1 {
+  font-size: 32px;
+  line-height: 32px;
+  color: $primary-color;
+  font-weight: 600;
+}
+
 .crop {
 	height: 100%;
 	width: auto;
