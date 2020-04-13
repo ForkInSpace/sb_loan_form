@@ -16,7 +16,6 @@ const appModule = angular
 		'rzSlider',
 		// application specific modules
 		'app.header',
-		'app.breadcrumb',
 		'app.home',
 		'app.calculator',
 		'app.personal-data',
