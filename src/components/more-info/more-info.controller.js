@@ -6,7 +6,7 @@ export default class MoreInfoController {
 	}
 
 	$onInit = () => {
-		this.heading = 'Small loan application';
+		this.heading = 'Additional info';
 		this.$log.info('Activated more info View.');
 	};
 }

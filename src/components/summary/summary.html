@@ -1,40 +1,71 @@
 <div class="container card-wrapper">
 	<h1>{{$ctrl.heading}}</h1>
-	<hr>
 	<div class="card-container" >
 		<div class="row">
 			<div class="col-12">
-				Co-borrower's data
-				<div class="slider-form">
-					<dl class="row">
-						<div class="col-4">
+				<table class="table">
+					<tbody>
+						<tr>
+							<th scope="row">Education</th>
+							<td>{{ $ctrl.data.personalData.education || '' }}</td>
+						</tr>
+						<tr>
+							<th scope="row">Position held</th>
+							<td>{{ $ctrl.data.personalData.occupation || '' }}</td>
+						</tr>
+						<tr>
+							<th scope="row">Business area of your employer</th>
+							<td>{{ $ctrl.data.personalData.industry || '' }}</td>
+						</tr>
+						<tr>
+							<th scope="row">Time employed</th>
+							<td>{{ $ctrl.data.personalData.timeEmployed || '' }}</td>
+						</tr>
+						<tr>
+							<th scope="row">Type of labour contract</th>
+							<td>{{ $ctrl.data.personalData.otherTypeOfContract ? $ctrl.data.personalData.otherTypeOfContract : $ctrl.data.personalData.typeOfContract }}</td>
+						</tr>
+						<tr>
+							<th scope="row">Marital status</th>
+							<td>{{ $ctrl.data.personalData.maritalStatus || '' }}</td>
+						</tr>
 
-						</div>
-						<div class="col-8">
-							<dd>
-								<div class="">
-									<a class="nav-link" href="#fat"><i class="fa fa-plus-circle"></i>Add Co-applicant</a>
-								</div>
-							</dd>
-						</div>
-					</dl>
-				</div>
+						<tr class="highlight">
+							<th scope="row">Loan amount</th>
+							<td>{{ $ctrl.data.loanAmount || '' }} EUR</td>
+						</tr>
+						<tr class="highlight">
+							<th scope="row">Loan Term</th>
+							<td>{{ ($ctrl.data.loanTermYears * 12) || '' }} months</td>
+						</tr>
+						<tr class="highlight">
+							<th scope="row">Monthly salary after taxes</th>
+							<td>{{ $ctrl.data.income || '' }} EUR</td>
+						</tr>
+						<tr class="highlight">
+							<th scope="row">Application date</th>
+							<td>
+								{{ $ctrl.date | date: 'dd.MM.yyyy' }}
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
 
 	<hr>
 	<div class="progress">
-		<div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+		<div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
 	</div>
 	<hr>
 	<div class="bottom-nav-buttons space-between">
-		<button type="button" class="btn btn-outline-secondary" ui-sref="personal-data">
+		<button type="button" class="btn btn-outline-secondary" ui-sref="more-info">
 			<i class="fa fa-angle-double-left"></i>
 			Back
 		</button>
-		<button type="button" class="btn btn-outline-warning" ui-sref="summary">
-			Next
+		<button type="button" class="btn btn-outline-warning" ng-click="submit()">
+			Submit
 			<i class="fa fa-angle-double-right"></i>
 		</button>
 	</div>
