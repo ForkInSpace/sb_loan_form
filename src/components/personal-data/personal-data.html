@@ -1,10 +1,10 @@
 <div class="container card-wrapper">
 	<h1>{{$ctrl.heading}}</h1>
 	<hr>
-	<div class="card-container" >
+	<div class="card-container">
 		<div class="row">
 			<div class="col-12">
-				<div class="slider-form">
+				<form name="personalForm" ng-submit="submitForm(userForm.$valid)" novalidate>
 					<dl class="row">
 						<div class="col-4">
 							<dt class="text-right">Education*</dt>
@@ -12,9 +12,11 @@
 						<div class="col-8">
 							<dd>
 								<div class="form-group">
-								  <select class="form-control" ng-model="$ctrl.personal.education" ng-change="" aria-label="Education">
+								  <select required name="education" class="form-control" ng-model="$ctrl.personal.education" ng-change="" aria-label="Education">
+										<option value=''>- Select -</option>
 										<option ng-value="e" ng-repeat="e in $ctrl.education track by $index">{{ e }}</option>
 									</select>
+									<p style="color:red" ng-show="personalForm.education.$invalid" class="help-block">This field is required.</p>
 								</div>
 							</dd>
 						</div>
@@ -26,9 +28,11 @@
 						<div class="col-8">
 							<dd>
 								<div class="form-group">
-									<select class="form-control" ng-model="$ctrl.personal.occupation" ng-change="" aria-label="Occupation">
+									<select required name="occupation" class="form-control" ng-model="$ctrl.personal.occupation" ng-change="" aria-label="Occupation">
+										<option value=''>- Select -</option>
 										<option ng-value="o" ng-repeat="o in $ctrl.occupation track by $index">{{ o }}</option>
 									</select>
+									<p style="color:red" ng-show="personalForm.occupation.$invalid" class="help-block">This field is required.</p>
 								</div>
 							</dd>
 						</div>
@@ -40,9 +44,11 @@
 						<div class="col-8">
 							<dd>
 								<div class="form-group">
-									<select class="form-control" ng-model="$ctrl.personal.industry" ng-change="" aria-label="Industry">
+									<select required name="industry" class="form-control" ng-model="$ctrl.personal.industry" ng-change="" aria-label="Industry">
+										<option value=''>- Select -</option>
 										<option ng-value="i" ng-repeat="i in $ctrl.industry track by $index">{{ i }}</option>
 									</select>
+									<p style="color:red" ng-show="personalForm.industry.$invalid" class="help-block">This field is required.</p>
 								</div>
 							</dd>
 						</div>
@@ -54,9 +60,12 @@
 						<div class="col-8">
 							<dd>
 								<div class="form-group">
-									<select class="form-control" ng-model="$ctrl.personal.timeEmployed" ng-change="" aria-label="Time employed">
+									<select required name="timeEmployed" class="form-control" ng-model="$ctrl.personal.timeEmployed" ng-change="" aria-label="Time employed">
+										<option value=''>- Select -</option>
 										<option ng-value="e" ng-repeat="e in $ctrl.timeEmployed track by $index">{{ e }}</option>
 									</select>
+									<p style="color:red" ng-show="personalForm.timeEmployed.$invalid" class="help-block">This field is required.</p>
+
 								</div>
 							</dd>
 						</div>
@@ -71,9 +80,11 @@
 						<div class="col-8">
 							<dd>
 								<div class="form-group">
-									<select class="form-control" ng-model="$ctrl.personal.typeOfContract" ng-change="" aria-label="Type of contract">
+									<select required name="typeOfContract" class="form-control" ng-model="$ctrl.personal.typeOfContract" ng-change="" aria-label="Type of contract">
+										<option value=''>- Select -</option>
 										<option ng-value="c" ng-repeat="c in $ctrl.typeOfContract track by $index">{{ c }}</option>
 									</select>
+									<p style="color:red" ng-show="personalForm.typeOfContract.$invalid" class="help-block">This field is required.</p>
 								</div>
 							</dd>
 						</div>
@@ -83,7 +94,8 @@
 						<div class="col-8" ng-if="$ctrl.personal.typeOfContract == 'Other'">
 							<dd>
 								<div class="form-group">
-									<input type="text" class="form-control" ng-model="$ctrl.personal.otherTypeOfContract" aria-label="other type of contract">
+									<input required name="otherTypeOfContract" type="text" class="form-control" ng-model="$ctrl.personal.otherTypeOfContract" aria-label="other type of contract">
+									<p style="color:red" ng-show="personalForm.otherTypeOfContract.$invalid" class="help-block">This field is required.</p>
 								</div>
 							</dd>
 						</div>
@@ -95,32 +107,34 @@
 						<div class="col-8">
 							<dd>
 								<div class="form-group">
-									<select class="form-control" ng-model="$ctrl.personal.maritalStatus" ng-change="" aria-label="Marital status">
+									<select required name="maritalStatus" class="form-control" ng-model="$ctrl.personal.maritalStatus" ng-change="" aria-label="Marital status">
+										<option value=''>- Select -</option>
 										<option ng-value="s" ng-repeat="s in $ctrl.maritalStatus">{{ s }}</option>
 									</select>
+									<p style="color:red" ng-show="personalForm.maritalStatus.$invalid" class="help-block">This field is required.</p>
 								</div>
 							</dd>
 						</div>
 					</dl>
-
-				</div>
+					<hr>
+					<div class="progress">
+						<div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+					</div>
+					<hr>
+					<div class="bottom-nav-buttons space-between">
+						<button type="button" class="btn btn-outline-secondary" ui-sref="calculator">
+							<i class="fa fa-angle-double-left"></i>
+							Back
+						</button>
+						<button type="button" class="btn btn-outline-warning" ng-disabled="personalForm.$invalid" ng-click="$ctrl.saveData()">
+							Next
+							<i class="fa fa-angle-double-right"></i>
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
 
-	<hr>
-	<div class="progress">
-	  <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-	</div>
-	<hr>
-	<div class="bottom-nav-buttons space-between">
-		<button type="button" class="btn btn-outline-secondary" ui-sref="calculator">
-			<i class="fa fa-angle-double-left"></i>
-			Back
-		</button>
-		<button type="button" class="btn btn-outline-warning" ui-sref="more-info">
-			Next
-			<i class="fa fa-angle-double-right"></i>
-		</button>
-	</div>
+
 </div>

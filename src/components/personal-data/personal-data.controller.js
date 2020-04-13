@@ -1,8 +1,10 @@
 export default class PersonalDataController {
-	constructor($log) {
+	constructor($log, formService, $location) {
 		'ngInject';
 
 		this.$log = $log;
+		this.$location = $location;
+		this.formService = formService;
 	}
 
 	$onInit = () => {
@@ -64,7 +66,35 @@ export default class PersonalDataController {
 			'Widow/Widower'
 		]
 
+		this.formService
+			.getData()
+			.then(data => {
+				console.log(data);
+				if(data && data.personalData){
+						this.personal.education = data.personalData.education || '';
+						this.personal.occupation = data.personalData.occupation || '';
+						this.personal.industry = data.personalData.industry || '';
+						this.personal.timeEmployed = data.personalData.timeEmployed || '';
+						this.personal.typeOfContract = data.personalData.typeOfContract || '';
+						this.personal.otherTypeOfContract = data.personalData.otherTypeOfContract || '';
+						this.personal.maritalStatus = data.personalData.maritalStatus || '';
 
+				}
+			})
 
 	};
+
+	saveData() {
+		console.log(this.personal);
+
+		this.formService
+			.savePersonalData(this.personal)
+			.then(res => {
+				// console.log('saved ', res);
+			})
+			.then(() => {
+				this.$location.path('more-info');
+			})
+	}
+
 }
