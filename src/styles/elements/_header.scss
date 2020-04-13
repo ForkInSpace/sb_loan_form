@@ -12,4 +12,16 @@
     top: 0;
     height: 10px;
   }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 66px;
+    left: 0;
+    right: 0;
+    background: url('/assets/bg-leaf.jpg');
+    background-image: cover;
+    background-position: center center;
+    height: 20px;
+  }
 }
