@@ -9,10 +9,10 @@
 					<div class="co-borrower-form">
 
 						<dl class="row">
-							<div class="col-4">
+							<div class="col-12 col-lg-4 col-xl-4">
 								<dt class="text-right" ng-class="{'red-text' : coBorrowerForm.name.$invalid }">Co-borrower's name*</dt>
 							</div>
-							<div class="col-8">
+							<div class="col-12 col-lg-8 col-xl-8">
 								<dd>
 									<div class="form-group">
 										<input required name="name" type="text" class="form-control" ng-model="$ctrl.info.name" ng-blur="coBorrowerForm.name.$valid && $ctrl.storeTheValue()" aria-label="Co-borrower's name">
@@ -21,10 +21,10 @@
 							</div>
 						</dl>
 						<dl class="row" ng-if="$ctrl.info.name">
-							<div class="col-4">
+							<div class="col-12 col-lg-4 col-xl-4">
 								<dt class="text-right" ng-class="{'red-text' : coBorrowerForm.income.$invalid }">Income after tax*</dt>
 							</div>
-							<div class="col-8">
+							<div class="col-12 col-lg-8 col-xl-8">
 								<dd>
 									<div class="form-group">
 										<input required name="income" type="text" class="form-control" ng-model="$ctrl.info.income" ng-blur="coBorrowerForm.income.$valid && $ctrl.storeTheValue()" aria-label="Co-borrower's income">
@@ -33,10 +33,10 @@
 							</div>
 						</dl>
 						<dl class="row" ng-if="$ctrl.info.income">
-							<div class="col-4">
+							<div class="col-12 col-lg-4 col-xl-4">
 								<dt class="text-right" ng-class="{'red-text' : coBorrowerForm.debt.$invalid }">Financial monthly liabilities (if any)*</dt>
 							</div>
-							<div class="col-8">
+							<div class="col-12 col-lg-8 col-xl-8">
 								<dd>
 									<div class="form-group">
 										<input required name="debt" type="text" class="form-control" ng-model="$ctrl.info.debt" ng-blur="coBorrowerForm.debt.$valid && $ctrl.storeTheValue()" aria-label="Co-borrower's debt">

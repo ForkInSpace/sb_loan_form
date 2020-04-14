@@ -63,3 +63,28 @@ h1 {
 .bg-accent {
 	background-color: $application-accent-color;
 }
+
+
+@media screen and (max-width: 576px) {
+	body {
+
+		th,
+		td,
+		* {
+			font-size: 14px;
+		}
+		h1 {
+			font-size: 22px;
+		}
+		.form-control {
+			width: 100% !important;
+		}
+		.slider-form__heading {
+			padding-top: 0 !important;
+			padding-bottom: 12px;
+		}
+		.text-right {
+			text-align: left !important;
+		}
+	}
+}
