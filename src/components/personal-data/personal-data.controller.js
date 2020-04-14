@@ -69,7 +69,6 @@ export default class PersonalDataController {
 		this.formService
 			.getData()
 			.then(data => {
-				console.log(data);
 				if(data && data.personalData){
 						this.personal.education = data.personalData.education || '';
 						this.personal.occupation = data.personalData.occupation || '';
@@ -85,8 +84,6 @@ export default class PersonalDataController {
 	};
 
 	saveData() {
-		console.log(this.personal);
-
 		this.formService
 			.savePersonalData(this.personal)
 			.then(res => {

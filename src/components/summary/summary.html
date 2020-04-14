@@ -3,7 +3,29 @@
 	<div class="card-container" >
 		<div class="row">
 			<div class="col-12">
-				<!-- TODO update the table to accomodate co-borrower data -->
+				<table class="table">
+					<tbody>
+						<tr class="highlight">
+							<th scope="row">Loan amount</th>
+							<td>{{ $ctrl.data.loanAmount || '' }} EUR</td>
+						</tr>
+						<tr class="highlight">
+							<th scope="row">Loan Term</th>
+							<td>{{ ($ctrl.data.loanTermYears * 12) || '' }} months</td>
+						</tr>
+						<tr class="highlight">
+							<th scope="row">Monthly salary after taxes</th>
+							<td>{{ $ctrl.data.income || '' }} EUR</td>
+						</tr>
+						<tr class="highlight">
+							<th scope="row">Application date</th>
+							<td>
+								{{ $ctrl.date | date: 'dd.MM.yyyy' }}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<h5>Your details</h5>
 				<table class="table">
 					<tbody>
 						<tr>
@@ -30,24 +52,22 @@
 							<th scope="row">Marital status</th>
 							<td>{{ $ctrl.data.personalData.maritalStatus || '' }}</td>
 						</tr>
-
-						<tr class="highlight">
-							<th scope="row">Loan amount</th>
-							<td>{{ $ctrl.data.loanAmount || '' }} EUR</td>
+					</tbody>
+				</table>
+				<h5>Co-borrower details</h5>
+				<table class="table">
+					<tbody>
+						<tr>
+							<th scope="row">Name</th>
+							<td>{{ $ctrl.moreData.name || '' }}</td>
 						</tr>
-						<tr class="highlight">
-							<th scope="row">Loan Term</th>
-							<td>{{ ($ctrl.data.loanTermYears * 12) || '' }} months</td>
+						<tr>
+							<th scope="row">Income</th>
+							<td>{{ $ctrl.moreData.income || '' }}</td>
 						</tr>
-						<tr class="highlight">
-							<th scope="row">Monthly salary after taxes</th>
-							<td>{{ $ctrl.data.income || '' }} EUR</td>
-						</tr>
-						<tr class="highlight">
-							<th scope="row">Application date</th>
-							<td>
-								{{ $ctrl.date | date: 'dd.MM.yyyy' }}
-							</td>
+						<tr>
+							<th scope="row">Monthly financial liabilities</th>
+							<td>{{ $ctrl.moreData.debt || '' }}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -65,7 +85,7 @@
 			<i class="fa fa-angle-double-left"></i>
 			Back
 		</button>
-		<button type="button" class="btn btn-outline-warning" ng-click="submit()">
+		<button type="button" class="btn btn-outline-warning" ng-click="$ctrl.submit()">
 			Submit
 			<i class="fa fa-angle-double-right"></i>
 		</button>

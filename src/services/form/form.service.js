@@ -18,7 +18,6 @@ export default class FormService {
 
   saveData = (res) => {
 		let defer = this.$q.defer();
-		console.log(this.form);
 		this.form = res;
 		if(this.personalData){
 			this.form.personalData = this.personalData;
@@ -35,7 +34,6 @@ export default class FormService {
 			this.form.personalData = this.personalData;
 		}
 		defer.resolve(this.form);
-		console.log(this.form);
 		return defer.promise;
 	}
 

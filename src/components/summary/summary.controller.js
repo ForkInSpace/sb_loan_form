@@ -10,18 +10,31 @@ export default class summaryController {
 	$onInit = () => {
 		this.heading = 'Summary';
 		this.date = new Date();
+
 		this.data = {}
+		this.moreData = {
+			name: '',
+			income: null,
+			debt: null
+		};
 
 		this.formService.getData().then((res) => {
-			console.log(res);
 			if(res){
 				this.data = res;
 			}
 		});
+
+		this.getFromSession(this.moreData);
 	};
 
+	getFromSession(obj){
+		return Object.keys(obj).forEach((item) => {
+			this.moreData[item] = this.$window.sessionStorage.getItem(item);
+		})
+	}
+
 	submit() {
-		this.$window.alert('Application successfully submited');
+		this.$log.log('Application successfully submited');
 	}
 
 }

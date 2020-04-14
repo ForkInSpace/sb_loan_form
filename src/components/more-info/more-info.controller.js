@@ -10,10 +10,11 @@ export default class MoreInfoController {
 		this.heading = 'Additional info';
 		this.info = {
 			name: '',
-			income: 350,
-			debt: 0
+			income: null,
+			debt: null
 		};
-		this.getFromSession(this.info);
+		if(Object.values(this.info).length == 3)
+			this.getFromSession(this.info);
 	};
 
 	saveToSession(obj){
@@ -22,6 +23,7 @@ export default class MoreInfoController {
 		})
 	}
 
+// TODO move this to a service
 	getFromSession(obj){
 		return Object.keys(obj).forEach((item) => {
 			this.info[item] = this.$window.sessionStorage.getItem(item);
