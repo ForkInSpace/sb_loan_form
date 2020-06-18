@@ -36,7 +36,7 @@
     "webpack-dev-server": "3.2.1"
   },
   "dependencies": {
-    "angular": "1.7.9",
+    "angular": "1.8.0",
     "angular-ui-router": "1.0.22",
     "angularjs-slider": "^7.0.0",
     "bootstrap": "4.3.1",
